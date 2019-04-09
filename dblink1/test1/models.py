@@ -30,3 +30,11 @@ class User1(AbstractBaseUser, PermissionsMixin):
         else:
             self.is_active = False
         self.save()
+        
+    def test_type(self):
+        if self.is_test1:
+            return 1
+        elif self.is_test2:
+            return 2
+        else:
+            return -1
