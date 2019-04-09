@@ -14,14 +14,8 @@ class User1Admin(UserAdmin):
     list_display = ('id', 'email', 'is_staff', 'is_active', )
     list_filter = ('id', 'email', 'is_staff', 'is_active', )
     fieldsets = (
-        (None, {'fields': ('email', 'password', 'is_seller', 'is_buyer', 'is_advertiser', 'account_credits', )}),
+        (None, {'fields': ('email', 'password', 'is_test1', 'is_test2', )}),
         ('Permissions', {'fields': ('is_staff', 'is_active')}),
-    )
-    add_fieldsets = (
-        (None, {
-            'classes': ('wide',),
-            'fields': ('email', 'password1', 'password2', 'is_seller', 'is_buyer',
-                       'is_advertiser', 'account_credits', 'is_staff', 'is_active')}),
     )
     search_fields = ('email', )
     ordering = ('email', )
