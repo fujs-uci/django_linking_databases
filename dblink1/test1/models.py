@@ -21,3 +21,12 @@ class User1(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+
+    def set_test_type(self, numb):
+        if numb == 1:
+            self.is_test1 = True
+        elif numb == 2:
+            self.is_test2 = True
+        else:
+            self.is_active = False
+        self.save()
