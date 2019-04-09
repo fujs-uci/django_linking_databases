@@ -128,3 +128,6 @@ STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'test1.User1'
 
+# User login and logout redirects
+
+LOGIN_REDIRECT_URL = 'test1:test1_home'
