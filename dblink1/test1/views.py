@@ -3,6 +3,8 @@ from django.shortcuts import render
 # Create your views here.
 def test1_home(request):
     user = request.user
+    if user.is_authenticated and user.test_type() != 1:
+        logout(request)
     if not user.is_authenticated:
         user = 'None'
 
