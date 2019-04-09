@@ -1,3 +1,30 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
+
+from .forms import User1CreationForm, User1ChangeForm
+from .models import User1
 
 # Register your models here.
+
+
+class User1Admin(UserAdmin):
+    add_form = User1CreationForm
+    form = User1ChangeForm
+    model = User1
+    list_display = ('id', 'email', 'is_staff', 'is_active', )
+    list_filter = ('id', 'email', 'is_staff', 'is_active', )
+    fieldsets = (
+        (None, {'fields': ('email', 'password', 'is_seller', 'is_buyer', 'is_advertiser', 'account_credits', )}),
+        ('Permissions', {'fields': ('is_staff', 'is_active')}),
+    )
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('email', 'password1', 'password2', 'is_seller', 'is_buyer',
+                       'is_advertiser', 'account_credits', 'is_staff', 'is_active')}),
+    )
+    search_fields = ('email', )
+    ordering = ('email', )
+
+
+admin.site.register(User1, User1Admin)
