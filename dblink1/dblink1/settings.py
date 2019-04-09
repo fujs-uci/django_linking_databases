@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'test1.apps.User1Config',
 ]
 
 MIDDLEWARE = [
@@ -78,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dblink_test',
         'USER': 'root',
-        'PASSWORD': '...',
+        'PASSWORD': 'Fo0th11L@',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
@@ -122,3 +123,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Customer base user model
+
+AUTH_USER_MODEL = 'test1.User1'
+
