@@ -25,8 +25,12 @@ INSTALLED_APPS = [
 ...
 AUTH_USER_MODEL = test1.User1
 ```
-6. Repeat above code in dblink1 and admin sites will share model registration w/o repeat code.
+### Single Admin Site
+6. Repeat above code in dblink1
 7. In dblink2.urls, change 'admin/' path to:
 ```
 path('admin/', include('dblink1.urls')),
 ```
+### prevent cross user login
+8. Give users an attribute to denote their permission on sites
+9. Check for permission on views
