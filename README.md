@@ -24,3 +24,4 @@ INSTALLED_APPS = [
 ...
 AUTH_USER_MODEL = test1.User1
 ```
+6. Repeat above code in dblink1 and admin sites will share model registration w/o repeat code.
