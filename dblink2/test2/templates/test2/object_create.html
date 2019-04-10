@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <body>
+    <a href="{% url "test2:test2_home" %}">Home</a>
     <h2>Object Manage: {{ user_id }}</h2>
     <form method="post">
         {% csrf_token %}
