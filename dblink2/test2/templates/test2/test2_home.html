@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Test 2</h1>
+{% if user.is_authenticated %}
+    {% if user.is_test2 %}
+        <h1>{{ user }}</h1>
+        <a href="{% url 'test2:test2_object_manage' user.id %}">Manage Objects</a>
+        <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+        <h1>Account BLOCKED</h1>
+        <a href="{% url 'test1:test1_home' %}">Go to test 1</a>
+    {% endif %}
+{% else %}
+    <h2>Not logged in</h2>
+    <a href="{% url 'login' %}">Login</a>
+{% endif %}
+</body>
+</html>
